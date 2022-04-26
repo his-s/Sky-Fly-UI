@@ -68,7 +68,6 @@ class AppColor {
   );
   static TextStyle cardTextStyle = GoogleFonts.roboto(
     color: cardColor,
-    fontSize: 30,
     fontWeight: FontWeight.w500,
   );
 }

@@ -1,8 +1,16 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import 'ui/screens/home_page.dart';
+import 'package:desktop_window/desktop_window.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+    await DesktopWindow.setMinWindowSize(const Size(400, 900));
+  }
+
   runApp(const MyApp());
 }
 

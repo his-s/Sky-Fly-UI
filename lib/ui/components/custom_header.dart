@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../../data/dummy_data.dart';
@@ -11,9 +12,11 @@ class CustomHeader extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          headerText,
-          style: AppColor.headerTextStyle,
+        Expanded(
+          child: AutoSizeText(
+            headerText,
+            style: AppColor.headerTextStyle,
+          ),
         ),
         const CircleAvatar(
           radius: 30,

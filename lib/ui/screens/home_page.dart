@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:fly_app/data/dummy_data.dart';
@@ -54,22 +55,23 @@ class HomePage extends StatelessWidget {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text(
-                                    trips[index].locationName,
-                                    style: AppColor.cardTextStyle,
+                                  Expanded(
+                                    child: AutoSizeText(
+                                      trips[index].locationName,
+                                      style: AppColor.cardTextStyle,
+                                    ),
                                   ),
                                   Container(
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(25),
                                     ),
-                                    padding: const EdgeInsets.all(12),
-                                    child: Text(
+                                    padding: const EdgeInsets.all(8),
+                                    child: AutoSizeText(
                                       "\$${trips[index].price}",
                                       style: const TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 18,
                                       ),
                                     ),
                                   ),
